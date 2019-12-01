@@ -1,0 +1,67 @@
+﻿SELECT Queryn
+Kopiera rätt query på dokumentet och lämna in när alla är klara.
+Uppgiften görs här (börja med att klicka “Run SQL”-knappen så får du fram tabellerna):
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all 
+och hjälp hittar du här:
+http://www.w3schools.com/sql/default.asp 
+
+
+1. Sök alla rader från employees tabellen
+
+
+SELECT * FROM Employees
+
+
+2. Sök alla rader från employees tabellen, begränsa så att ändast 10 skrivs ut
+
+
+SELECT * FROM Employees
+LIMIT 10
+
+
+3. Ordna employees enligt BirthDate så att den som är yngst kommer först
+
+
+SELECT * FROM Employees
+ORDER BY BirthDate DESC;
+
+
+4. Skriv ut ContactName på alla från Finland ELLER Sweden från Customers
+
+
+        SELECT ContactName FROM Customers
+WHERE Country='Finland' OR Country='Sweden';
+
+
+5. Skriv ut CustomerName och ContactName på alla från Helsinki, Finland från Customers 
+
+
+        SELECT CustomerName, ContactName FROM Customers 
+WHERE Country='Finland' AND City='Helsinki';
+
+
+6. Skriv ut alla som har BA (Bachelor of Arts) som sin skolning (notes) från Employees, ordna enligt släktnamn i alfabetisk ordning
+
+
+        SELECT * FROM Employees
+WHERE NOTES LIKE '%BA%'
+ORDER BY LastName;
+________________
+7. Skriv ut alla som INTE har BA (bachelor of arts) som sin skolning (notes)
+
+
+        SELECT * FROM Employees
+WHERE NOTES NOT LIKE '%BA%';
+
+
+8. Sök alla som har bokstaven ”e”  i sitt förnamn
+
+
+        SELECT * FROM Employees
+WHERE FirstName LIKE '%e%';
+
+
+9. Sök förnamn och efternamn alla som är födda mellan 1960 och 1970, ordna så att äldsta kommer först
+
+
+SELECT FirstName, LastName FROM Employees WHERE (BirthDate BETWEEN '1960-01-01' AND '1970-12-31');
